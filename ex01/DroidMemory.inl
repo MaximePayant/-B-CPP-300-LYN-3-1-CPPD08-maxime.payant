@@ -12,7 +12,7 @@ inline DroidMemory& DroidMemory::operator<<(const DroidMemory& right)
     return (*this);
 }
 
-inline DroidMemory& DroidMemory::operator>>(DroidMemory& right)
+inline DroidMemory& DroidMemory::operator>>(DroidMemory& right) const
 {
     right.m_exp += m_exp;
     right.m_fingerPrint ^= m_fingerPrint;

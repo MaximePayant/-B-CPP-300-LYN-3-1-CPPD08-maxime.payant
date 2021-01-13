@@ -27,9 +27,11 @@ class DroidMemory
         void setExp(const std::size_t& newExp);
 
         DroidMemory& operator<<(const DroidMemory& right);
-        DroidMemory& operator>>(DroidMemory& right);
+        DroidMemory& operator>>(DroidMemory& right) const;
         DroidMemory& operator+=(const DroidMemory& right);
         DroidMemory& operator+=(const std::size_t& right);
+        bool operator==(const std::size_t& right) const;
+        bool operator!=(const std::size_t& right) const;
 
 };
 
