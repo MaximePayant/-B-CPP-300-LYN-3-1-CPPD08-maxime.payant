@@ -15,18 +15,14 @@ inline void Droid::operator=(const Droid& droid)
 
 inline bool Droid::operator==(const Droid& droid)
 {
-    if (m_id == droid.m_id
-    && m_energy == droid.m_energy
-    && m_status == droid.m_status)
+    if (m_status == droid.m_status)
         return (true);
     return (false);
 }
 
 inline bool Droid::operator!=(const Droid& droid)
 {
-    if (m_id == droid.m_id
-    && m_energy == droid.m_energy
-    && m_status == droid.m_status)
+    if (m_status == droid.m_status)
         return (false);
     return (true);
 }
