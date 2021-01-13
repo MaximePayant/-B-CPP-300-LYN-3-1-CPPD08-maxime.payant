@@ -9,6 +9,7 @@ inline Droid& Droid::operator=(const Droid& droid)
 {
     m_id = droid.m_id;
     m_energy = droid.m_energy;
+    delete(m_status);
     m_status = new std::string(*droid.m_status);
     return (*this);
 }
@@ -17,7 +18,7 @@ inline bool Droid::operator==(const Droid& droid) const
 {
     if (m_id == droid.m_id
     && m_energy == droid.m_energy
-    && m_status == droid.m_status)
+    && *m_status == *droid.m_status)
         return (true);
     return (false);
 }
@@ -26,7 +27,7 @@ inline bool Droid::operator!=(const Droid& droid) const
 {
     if (m_id == droid.m_id
     && m_energy == droid.m_energy
-    && m_status == droid.m_status)
+    && *m_status == *droid.m_status)
         return (false);
     return (true);
 }
