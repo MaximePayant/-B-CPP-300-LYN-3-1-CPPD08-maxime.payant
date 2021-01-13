@@ -29,6 +29,7 @@ m_attack(droid.m_attack),
 m_toughness(droid.m_toughness)
 {
     m_status = new std::string(*droid.m_status);
+    m_battleData = new DroidMemory(*droid.m_battleData);
     std::cout
         << "Droid '"
         << m_id
@@ -44,6 +45,7 @@ Droid::~Droid()
         << "' Destroyed"
         << std::endl;
     delete(m_status);
+    delete(m_battleData);
 }
 
 const std::string& Droid::getId() const
@@ -78,7 +80,7 @@ void Droid::setId(const std::string& newSerial)
 
 void Droid::setEnergy(const std::size_t& newEnergy)
 {
-    m_energy = newEnergy;
+    m_energy = (newEnergy > 100 ? 100 : newEnergy);
 }
 
 void Droid::setStatus(std::string* newStatut)

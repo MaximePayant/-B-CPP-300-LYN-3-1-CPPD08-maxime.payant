@@ -35,7 +35,7 @@ class Droid
         void setEnergy(const std::size_t& newEnergy);
         void setStatus(std::string* newStatut);
 
-        void operator=(const Droid& droid);
+        Droid& operator=(const Droid& droid);
         bool operator==(const Droid& right) const;
         bool operator!=(const Droid& right) const;
         void operator<<(size_t& energyTank);

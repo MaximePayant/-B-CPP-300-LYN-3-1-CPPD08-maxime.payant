@@ -12,6 +12,11 @@ m_fingerPrint(rand()),
 m_exp(0)
 {}
 
+DroidMemory::DroidMemory(const DroidMemory& droid) :
+m_fingerPrint(droid.m_fingerPrint),
+m_exp(droid.m_exp)
+{}
+
 DroidMemory::~DroidMemory()
 {}
 

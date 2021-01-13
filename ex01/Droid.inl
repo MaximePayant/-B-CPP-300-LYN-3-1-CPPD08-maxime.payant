@@ -5,7 +5,7 @@
 ** Droid.inl
 */
 
-inline void Droid::operator=(const Droid& droid)
+inline Droid& Droid::operator=(const Droid& droid)
 {
     m_id = droid.m_id;
     m_energy = droid.m_energy;

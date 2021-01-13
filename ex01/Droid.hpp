@@ -41,7 +41,7 @@ class Droid
         void setStatus(std::string* newStatut);
         void setBattleData(DroidMemory *newBattleData);
 
-        void operator=(const Droid& droid);
+        Droid& operator=(const Droid& droid);
         bool operator==(const Droid& right) const;
         bool operator!=(const Droid& right) const;
         void operator<<(size_t& energyTank);

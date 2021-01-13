@@ -19,6 +19,7 @@ class DroidMemory
 
     public:
         DroidMemory();
+        DroidMemory(const DroidMemory& droid);
         ~DroidMemory();
 
         const std::size_t& getFingerprint() const;

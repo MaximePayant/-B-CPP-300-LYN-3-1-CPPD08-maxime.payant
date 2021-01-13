@@ -77,7 +77,7 @@ void Droid::setId(const std::string& newSerial)
 
 void Droid::setEnergy(const std::size_t& newEnergy)
 {
-    m_energy = newEnergy;
+    m_energy = (newEnergy > 100 ? 100 : newEnergy);
 }
 
 void Droid::setStatus(std::string* newStatut)
