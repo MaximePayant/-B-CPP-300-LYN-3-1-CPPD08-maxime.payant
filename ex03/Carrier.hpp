@@ -44,7 +44,7 @@ class Carrier
         Carrier& operator>>(Droid*& droid);
         Droid*& operator[](const std::size_t& index);
         Droid* operator[](const std::size_t& index) const;
-        void operator()(int x, int y);
+        bool operator()(int x, int y);
         Carrier &operator~();
 };
 

@@ -42,9 +42,12 @@ inline Carrier& Carrier::operator>>(Droid*& droid)
     return (~(*this));
 }
 
-inline void Carrier::operator()(int x, int y)
+inline bool Carrier::operator()(int x, int y)
 {
+    if ((abs(x) + abs(y)) * (10 + (getSize(m_droids))) > m_energy)
+        return (false);
     m_energy -= (abs(x) + abs(y)) * (10 + (getSize(m_droids)));
+    return (true);
 }
 
 inline std::ostream& operator<<(std::ostream& os, const Carrier& carrier)
@@ -59,9 +62,13 @@ inline std::ostream& operator<<(std::ostream& os, const Carrier& carrier)
             std::cout << *carrier[ctr];
         else
             std::cout << "Free";
-        if (ctr < 4)
-            std::cout << std::endl;
+        std::cout << std::endl;
     }
+    std::cout
+        << "Speed : "
+        << carrier.getSpeed()
+        << ", Energy "
+        << carrier.getEnergy();
     return (os);
 }
 
