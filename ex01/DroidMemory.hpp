@@ -30,8 +30,6 @@ class DroidMemory
         DroidMemory& operator>>(DroidMemory& right) const;
         DroidMemory& operator+=(const DroidMemory& right);
         DroidMemory& operator+=(const std::size_t& right);
-        bool operator==(const std::size_t& right) const;
-        bool operator!=(const std::size_t& right) const;
 
 };
 
