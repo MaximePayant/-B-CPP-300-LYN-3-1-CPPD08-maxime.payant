@@ -13,14 +13,14 @@ inline void Droid::operator=(const Droid& droid)
     m_status = new std::string(*droid.m_status);
 }
 
-inline bool Droid::operator==(const Droid& droid)
+inline bool Droid::operator==(const Droid& droid) const
 {
     if (m_status == droid.m_status)
         return (true);
     return (false);
 }
 
-inline bool Droid::operator!=(const Droid& droid)
+inline bool Droid::operator!=(const Droid& droid) const
 {
     if (m_status == droid.m_status)
         return (false);

@@ -13,7 +13,7 @@ inline void Droid::operator=(const Droid& droid)
     m_status = new std::string(*droid.m_status);
 }
 
-inline bool Droid::operator==(const Droid& droid)
+inline bool Droid::operator==(const Droid& droid) const
 {
     if (m_id == droid.m_id
     && m_energy == droid.m_energy
@@ -22,7 +22,7 @@ inline bool Droid::operator==(const Droid& droid)
     return (false);
 }
 
-inline bool Droid::operator!=(const Droid& droid)
+inline bool Droid::operator!=(const Droid& droid) const
 {
     if (m_id == droid.m_id
     && m_energy == droid.m_energy
