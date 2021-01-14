@@ -29,7 +29,7 @@ class Supply
         const Types& getType() const { return (m_type); };
         const std::size_t& getAmount() const { return (m_amount); };
 
-        operator size_t() { return (m_amount); };
+        operator size_t() const { return (m_amount); };
         bool operator==(Types right) const { return (m_type == right); };
         bool operator!=(Types right) const { return (m_type != right); };
         Supply& operator!();
