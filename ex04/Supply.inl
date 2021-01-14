@@ -39,10 +39,9 @@ inline std::ostream& operator<<(std::ostream& os, const Supply& supply)
 
 inline Supply& Supply::operator!()
 {
-    if (m_type == Supply::Wreck) {
+    if (m_type == Supply::Wreck)
         for (std::size_t ctr = 0; ctr < m_amount; ctr += 1)
             delete(m_wrecks[ctr]);
-    }
     m_amount = 0;
     return (*this);
 }
