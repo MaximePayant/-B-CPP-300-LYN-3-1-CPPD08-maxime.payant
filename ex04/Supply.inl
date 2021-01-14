@@ -28,7 +28,7 @@ inline std::ostream& operator<<(std::ostream& os, const Supply& supply)
         << supply.getAmount()
         << ", "
         << supply.getType();
-    if (supply == Supply::Wreck && supply.getAmount()) {
+    if (supply.getType() == Supply::Wreck && supply.getAmount()) {
         std::cout << std::endl;
         for (std::size_t ctr = 0; ctr < supply.getAmount() - 1; ctr += 1)
             std::cout << *supply[ctr] << std::endl;

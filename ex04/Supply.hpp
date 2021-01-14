@@ -30,8 +30,8 @@ class Supply
         const std::size_t& getAmount() const { return (m_amount); };
 
         operator size_t() const { return (m_amount); };
-        bool operator==(Types right) const { return (m_type == right); };
-        bool operator!=(Types right) const { return (m_type != right); };
+        bool operator==(const Supply& right) const { return (m_type == right.m_type); };
+        bool operator!=(const Supply& right) const { return (m_type != right.m_type); };
         Supply& operator!();
         Droid*& operator*() const { return (m_wrecks[pos]); };
         Droid* operator->() const { return (m_wrecks[pos]); };

@@ -29,6 +29,16 @@ inline Carrier& Carrier::operator<<(Droid*& droid)
     return (~(*this));
 }
 
+Carrier& Carrier::operator<<(size_t& energyTank)
+{
+    std::size_t dif = 600 - m_energy;
+
+    dif = (dif > energyTank ? energyTank : dif);
+    m_energy += dif;
+    energyTank -= dif;
+    return (*this);
+}
+
 inline Carrier& Carrier::operator>>(Droid*& droid)
 {
     if (droid != NULL)
@@ -42,9 +52,12 @@ inline Carrier& Carrier::operator>>(Droid*& droid)
     return (~(*this));
 }
 
-inline void Carrier::operator()(int x, int y)
+inline bool Carrier::operator()(int x, int y)
 {
+    if (getSize(m_droids) == 0 || (abs(x) + abs(y)) * (10 + (getSize(m_droids))) > m_energy)
+        return (false);
     m_energy -= (abs(x) + abs(y)) * (10 + (getSize(m_droids)));
+    return (true);
 }
 
 inline std::ostream& operator<<(std::ostream& os, const Carrier& carrier)
@@ -68,6 +81,7 @@ inline std::ostream& operator<<(std::ostream& os, const Carrier& carrier)
 inline Carrier& Carrier::operator~()
 {
     std::size_t nbDroid = getSize(m_droids);
+
     if (nbDroid == 0)
         m_speed = 0;
     else
