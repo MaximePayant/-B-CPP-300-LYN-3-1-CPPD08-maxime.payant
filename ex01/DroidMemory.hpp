@@ -18,7 +18,7 @@ class DroidMemory
         std::size_t m_exp;
 
     public:
-        DroidMemory();
+        DroidMemory(const std::size_t& fingerPrint = rand(), const std::size_t& exp = 0);
         DroidMemory(const DroidMemory& droid);
         ~DroidMemory();
 

@@ -41,19 +41,17 @@ inline DroidMemory& DroidMemory::operator+=(const std::size_t& right)
 
 inline DroidMemory& operator+(const DroidMemory& left, const DroidMemory& right)
 {
-    DroidMemory *newDroid = new DroidMemory();
+    DroidMemory *newDroid = new DroidMemory(left.getFingerprint() ^ right.getFingerprint()
+                                            , left.getExp() + right.getExp());
 
-    *newDroid += left;
-    *newDroid += right;
     return (*newDroid);
 }
 
 inline DroidMemory& operator+(const DroidMemory& left, const std::size_t& right)
 {
-    DroidMemory *newDroid = new DroidMemory();
+    DroidMemory *newDroid = new DroidMemory(left.getFingerprint() ^ right
+                                            , left.getExp() + right);
 
-    *newDroid += left;
-    *newDroid += right;
     return (*newDroid);
 }
 

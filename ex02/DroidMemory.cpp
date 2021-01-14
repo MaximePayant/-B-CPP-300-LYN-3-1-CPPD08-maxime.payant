@@ -7,9 +7,9 @@
 
 #include "DroidMemory.hpp"
 
-DroidMemory::DroidMemory() :
-m_fingerPrint(rand()),
-m_exp(0)
+DroidMemory::DroidMemory(const std::size_t& fingerPrint, const std::size_t& exp) :
+m_fingerPrint(fingerPrint),
+m_exp(exp)
 {}
 
 DroidMemory::DroidMemory(const DroidMemory& droid) :
