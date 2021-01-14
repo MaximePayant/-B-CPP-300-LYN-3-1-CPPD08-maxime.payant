@@ -43,7 +43,6 @@ class Supply
         Types m_type;
         std::size_t m_amount;
         Droid **m_wrecks;
-
         int pos;
 
 };

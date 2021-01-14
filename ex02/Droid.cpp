@@ -73,6 +73,11 @@ const std::string* Droid::getStatus() const
     return (m_status);
 }
 
+const DroidMemory* Droid::getBattleData() const
+{
+    return (m_battleData);
+}
+
 void Droid::setId(const std::string& newSerial)
 {
     m_id = newSerial;
