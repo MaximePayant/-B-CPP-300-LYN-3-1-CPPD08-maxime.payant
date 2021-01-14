@@ -5,6 +5,13 @@
 ** DoidMemory.inl
 */
 
+inline DroidMemory& DroidMemory::operator=(const DroidMemory& right)
+{
+    m_fingerPrint = right.m_fingerPrint;
+    m_exp = right.m_exp;
+    return (*this);
+}
+
 inline DroidMemory& DroidMemory::operator<<(const DroidMemory& right)
 {
     m_exp += right.m_exp;

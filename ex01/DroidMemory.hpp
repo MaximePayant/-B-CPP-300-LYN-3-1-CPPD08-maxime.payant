@@ -27,6 +27,7 @@ class DroidMemory
         void setFingerprint(const std::size_t& newFingerPrint);
         void setExp(const std::size_t& newExp);
 
+        DroidMemory& operator=(const DroidMemory& right);
         DroidMemory& operator<<(const DroidMemory& right);
         DroidMemory& operator>>(DroidMemory& right) const;
         DroidMemory& operator+=(const DroidMemory& right);
